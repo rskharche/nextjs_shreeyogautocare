@@ -17,7 +17,7 @@ const founders = [
         id: 1,
         name: "Askshay Anil Manave",
         designation: "Founder & Director",
-        image: "/founders/founder1.png",
+        image: "/founders/founder1.PNG",
         phone: "+91 7387979512",
     },
     {
