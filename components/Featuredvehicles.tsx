@@ -5,7 +5,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Fuel, Gauge, Calendar } from "lucide-react";
 
-const vehicles = [
+type Vehicle = {
+    id: number;
+    name: string;
+    year: number;
+    fuel: string;
+    km: string;
+    price: string;
+    category: string;
+    condition: string;
+    image: string;
+};
+
+const vehicles: Vehicle[] = [
     {
         id: 1,
         name: "Hyundai Creta SX",
@@ -83,14 +95,16 @@ export default function FeaturedVehicles() {
         activeCategory === "All"
             ? vehicles
             : vehicles.filter(
-                (vehicle) =>
-                    vehicle.category === activeCategory ||
-                    vehicle.condition === activeCategory
-            );
+                  (vehicle) =>
+                      vehicle.category === activeCategory ||
+                      vehicle.condition === activeCategory
+              );
 
     return (
         <section className="bg-[#111111] py-20">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
+
+                {/* ================= HEADER ================= */}
 
                 <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
 
@@ -104,26 +118,29 @@ export default function FeaturedVehicles() {
                         </h2>
 
                         <p className="mt-3 max-w-xl text-gray-400">
-                            Explore our carefully selected cars and bikes, ready for their
-                            next journey.
+                            Explore our carefully selected cars and bikes, ready for
+                            their next journey.
                         </p>
                     </div>
 
-                    {/* Category Tabs */}
+                    {/* ================= CATEGORY TABS ================= */}
+
                     <div className="flex flex-wrap gap-2">
                         {categories.map((category) => (
                             <button
                                 key={category}
                                 onClick={() => setActiveCategory(category)}
-                                className={`rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300 ${activeCategory === category
-                                        ? "bg-gray-900 text-white shadow-lg"
+                                className={`rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300 ${
+                                    activeCategory === category
+                                        ? "bg-amber-500 text-white shadow-lg"
                                         : "bg-white text-gray-600 hover:bg-amber-500 hover:text-white"
-                                    }`}
+                                }`}
                             >
                                 {category}
                             </button>
                         ))}
                     </div>
+
                 </div>
 
                 {/* ================= VEHICLE GRID ================= */}
@@ -131,7 +148,10 @@ export default function FeaturedVehicles() {
                 <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
                     {filteredVehicles.slice(0, 6).map((vehicle) => (
-                        <VehicleCard key={vehicle.id} vehicle={vehicle} />
+                        <VehicleCard
+                            key={vehicle.id}
+                            vehicle={vehicle}
+                        />
                     ))}
 
                 </div>
@@ -139,6 +159,7 @@ export default function FeaturedVehicles() {
                 {/* ================= VIEW ALL ================= */}
 
                 <div className="mt-12 flex justify-center">
+
                     <Link
                         href="/vehicles"
                         className="group inline-flex items-center gap-3 rounded-full bg-gray-900 px-7 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:bg-amber-500"
@@ -150,6 +171,7 @@ export default function FeaturedVehicles() {
                             className="transition-transform duration-300 group-hover:translate-x-1"
                         />
                     </Link>
+
                 </div>
 
             </div>
@@ -158,22 +180,29 @@ export default function FeaturedVehicles() {
 }
 
 
+/* =========================================================
+   VEHICLE CARD
+========================================================= */
 
-function VehicleCard({ vehicle }) {
+function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
+
     return (
         <div className="group overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
 
-            {/* Image */}
+            {/* ================= IMAGE ================= */}
+
             <div className="relative h-64 overflow-hidden bg-gray-200">
 
                 <Image
                     src={vehicle.image}
                     alt={vehicle.name}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 
                 {/* Condition Badge */}
+
                 <div className="absolute left-4 top-4">
                     <span className="rounded-full bg-white/95 px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-gray-900 shadow">
                         {vehicle.condition}
@@ -181,6 +210,7 @@ function VehicleCard({ vehicle }) {
                 </div>
 
                 {/* Price Badge */}
+
                 <div className="absolute bottom-4 left-4">
                     <span className="rounded-lg bg-gray-900/90 px-4 py-2 text-sm font-bold text-white backdrop-blur">
                         {vehicle.price}
@@ -189,22 +219,30 @@ function VehicleCard({ vehicle }) {
 
             </div>
 
+            {/* ================= CONTENT ================= */}
 
-            {/* Content */}
-            <div className="p-6 ">
-                
+            <div className="p-6">
+
                 <div className="mb-4">
+
                     <h3 className="text-xl font-bold text-gray-900 transition-colors group-hover:text-amber-500">
                         {vehicle.name}
                     </h3>
+
                 </div>
 
+                {/* ================= VEHICLE INFORMATION ================= */}
 
-                {/* Vehicle Information */}
                 <div className="grid grid-cols-3 gap-3 border-y border-gray-100 py-4">
 
+                    {/* Year */}
+
                     <div className="flex flex-col items-center gap-1 text-center">
-                        <Calendar size={17} className="text-amber-500" />
+
+                        <Calendar
+                            size={17}
+                            className="text-amber-500"
+                        />
 
                         <span className="text-xs text-gray-400">
                             Year
@@ -213,11 +251,17 @@ function VehicleCard({ vehicle }) {
                         <span className="text-sm font-semibold text-gray-800">
                             {vehicle.year}
                         </span>
+
                     </div>
 
+                    {/* Fuel */}
 
                     <div className="flex flex-col items-center gap-1 border-x border-gray-100 text-center">
-                        <Fuel size={17} className="text-amber-500" />
+
+                        <Fuel
+                            size={17}
+                            className="text-amber-500"
+                        />
 
                         <span className="text-xs text-gray-400">
                             Fuel
@@ -226,11 +270,17 @@ function VehicleCard({ vehicle }) {
                         <span className="text-sm font-semibold text-gray-800">
                             {vehicle.fuel}
                         </span>
+
                     </div>
 
+                    {/* KM */}
 
                     <div className="flex flex-col items-center gap-1 text-center">
-                        <Gauge size={17} className="text-amber-500" />
+
+                        <Gauge
+                            size={17}
+                            className="text-amber-500"
+                        />
 
                         <span className="text-xs text-gray-400">
                             Driven
@@ -239,16 +289,18 @@ function VehicleCard({ vehicle }) {
                         <span className="text-sm font-semibold text-gray-800">
                             {vehicle.km}
                         </span>
+
                     </div>
 
                 </div>
 
+                {/* ================= DETAILS BUTTON ================= */}
 
-                {/* Details Button */}
                 <Link
                     href={`/vehicles/${vehicle.id}`}
                     className="group/button mt-5 flex items-center justify-between rounded-xl border border-gray-200 px-4 py-3 text-sm font-bold text-gray-900 transition-all duration-300 hover:border-amber-500 hover:bg-amber-500 hover:text-white"
                 >
+
                     <span>
                         VIEW DETAILS
                     </span>
@@ -257,10 +309,11 @@ function VehicleCard({ vehicle }) {
                         size={17}
                         className="transition-transform duration-300 group-hover/button:translate-x-1"
                     />
-                </Link>
-            </div>
-      
 
-    </div >
-  );
+                </Link>
+
+            </div>
+
+        </div>
+    );
 }
