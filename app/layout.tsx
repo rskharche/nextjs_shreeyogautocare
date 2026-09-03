@@ -4,9 +4,9 @@ import { Oswald } from "next/font/google";
 
 import "./globals.css";
 import Navigation from "@/components/Navigation";
-import Quickaction from "@/components/Quickaction";
-import FeaturedVehicles from "@/components/Featuredvehicles";
+
 import Footer from "@/components/Footer";
+import ContactUs from "@/components/ContactUs";
 
 const oswald = Oswald({ subsets: ["latin"] });
 
@@ -28,8 +28,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className={`${oswald.className} min-h-full flex flex-col`}>{/* Apply the Oswald font class */}
         <Navigation />
         {children}
-        <Quickaction />
-        <FeaturedVehicles />
         <Footer/>
         </body>
     </html>

@@ -20,14 +20,14 @@ type Vehicle = {
 const vehicles: Vehicle[] = [
     {
         id: 1,
-        name: "Hyundai Creta SX",
-        year: 2022,
+        name: "BAJAJ DOMINAR 400",
+        year: 2017,
         fuel: "Petrol",
         km: "45,000 KM",
-        price: "₹10.50 Lakh",
-        category: "Cars",
+        price: "₹99,000 Thousand",
+        category: "Bikes",
         condition: "Used",
-        image: "/vehicles/creta.jpg",
+        image: "/vehicle/vehicle3.jpeg",
     },
     {
         id: 2,
@@ -42,14 +42,14 @@ const vehicles: Vehicle[] = [
     },
     {
         id: 3,
-        name: "Royal Enfield Classic 350",
+        name: "YEZDI ROADSTER (MH-46)",
         year: 2023,
         fuel: "Petrol",
-        km: "12,000 KM",
-        price: "₹1.65 Lakh",
+        km: "2,700 KM",
+        price: "₹2.10 Lakh",
         category: "Bikes",
         condition: "Used",
-        image: "/vehicles/classic-350.jpg",
+        image: "/vehicle/vehicle1.jpeg",
     },
     {
         id: 4,
@@ -64,14 +64,14 @@ const vehicles: Vehicle[] = [
     },
     {
         id: 5,
-        name: "Honda Activa 6G",
-        year: 2024,
+        name: "IMPERIALE 400",
+        year: 2022,
         fuel: "Petrol",
-        km: "5,200 KM",
-        price: "₹82,000",
+        km: "29,500 KM",
+        price: "₹1.85 Lakh",
         category: "Bikes",
-        condition: "New",
-        image: "/vehicles/activa.jpg",
+        condition: "Used",
+        image: "/vehicle/vehicle2.jpeg",
     },
     {
         id: 6,
@@ -88,6 +88,10 @@ const vehicles: Vehicle[] = [
 
 const categories = ["All", "Cars", "Bikes", "New", "Used"];
 
+const BASE_PATH =
+    process.env.NODE_ENV === "production"
+        ? "/nextjs_shreeyogautocare"
+        : "";
 export default function FeaturedVehicles() {
     const [activeCategory, setActiveCategory] = useState("All");
 
@@ -161,7 +165,7 @@ export default function FeaturedVehicles() {
                 <div className="mt-12 flex justify-center">
 
                     <Link
-                        href="/vehicles"
+                        href="/vehicles/bikes"
                         className="group inline-flex items-center gap-3 rounded-full bg-gray-900 px-7 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:bg-amber-500"
                     >
                         VIEW ALL VEHICLES
@@ -194,7 +198,7 @@ function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
             <div className="relative h-64 overflow-hidden bg-gray-200">
 
                 <Image
-                    src={vehicle.image}
+                    src={`${BASE_PATH}${vehicle.image}`}
                     alt={vehicle.name}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

@@ -212,6 +212,8 @@ function Footer() {
                                         </span> AutoCare
                                         <br />
                                         <span className="font-bold text-amber-500">Shop 1</span> :-  next to bharat petroleum, opposite to KGN DHABA, Ajivali, Vavoshi, Maharashtra 410203
+                                       <br />
+                                        <span className="font-bold text-amber-500">Shop 2</span> :-  Shop No 1, Patil Nivas, near sharada magal karyalaya, Mahad, mahad, Khopoli, Maharashtra 410202
 
                                     </p>
                                 </div>
@@ -265,7 +267,7 @@ function Footer() {
                                         href="mailto:info@shreeyogautocare.com"
                                         className="mt-1 block text-sm text-gray-400 transition hover:text-amber-500"
                                     >
-                                        info@shreeyogautocare.com
+                                        shreeyogautocare@gmail.com
                                     </a>
 
                                 </div>

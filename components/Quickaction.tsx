@@ -30,7 +30,7 @@ const options = [
     href: "/car-wash",
     button: "Book Wash",
   },
-];   
+];
 
 function Quickaction() {
   return (
@@ -41,11 +41,12 @@ function Quickaction() {
         <div className="mb-10 text-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-[0.25em] text-amber-400">
             <span className="text-yellow-400">
-                  SHREE
-                </span>
-                <span className="text-white">
-                  YOG
-                </span> AutoCare
+              SHREE
+            </span>
+            <span className="text-white">
+              YOG
+            </span>{" "}
+            AutoCare
           </p>
 
           <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">
@@ -69,6 +70,7 @@ function Quickaction() {
                 href={item.href}
                 className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-amber-400 hover:shadow-xl"
               >
+
                 {/* Background decoration */}
                 <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-amber-50 transition-transform duration-500 group-hover:scale-150" />
 
@@ -79,6 +81,7 @@ function Quickaction() {
 
                 {/* Content */}
                 <div className="relative">
+
                   <h3 className="text-xl font-bold text-gray-900">
                     {item.title}
                   </h3>
@@ -87,7 +90,7 @@ function Quickaction() {
                     {item.description}
                   </p>
 
-                  {/* Button */}
+                  {/* View Button */}
                   <div className="mt-7 flex items-center gap-2 text-sm font-semibold text-gray-900 transition-colors group-hover:text-amber-500">
                     {item.button}
 
@@ -96,7 +99,9 @@ function Quickaction() {
                       className="transition-transform duration-300 group-hover:translate-x-1"
                     />
                   </div>
+
                 </div>
+
               </Link>
             );
           })}
@@ -104,7 +109,7 @@ function Quickaction() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default Quickaction
+export default Quickaction;

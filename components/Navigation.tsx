@@ -24,6 +24,9 @@ function Navigation() {
             </div>
             <nav>
                 <ul className="flex gap-4 justify-end caret-amber-300">
+                   <li>
+                        <Link className="hover:text-amber-300" href="/">Home</Link>
+                    </li>
                     <li>
                         <Link className="hover:text-amber-300" href="/components/Featuredvehicles">Buy</Link>
                     </li>
@@ -37,7 +40,7 @@ function Navigation() {
                         <Link className="hover:text-amber-300" href="/wash">Wash</Link>
                     </li>
                     <li>
-                        <Link className="hover:text-amber-300" href="/contacts">Contacts</Link>
+                        <Link className="hover:text-amber-300" href="/Contact">Contact Us</Link>
                     </li>
                 </ul>
             </nav>
