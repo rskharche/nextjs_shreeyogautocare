@@ -8,19 +8,19 @@ import Image from "next/image";
 const bannerImages = [
     {
         id: 1,
-        image: "/Banner/banner_1.jpg",
+        image: "/Banner/banner1.jpg",
         title: "SHREEYOG AUTOCARE",
         description: "Professional Bike and Car Sales & Repair Services",
     },
     {
         id: 2,
-        image: "/Banner/banner_2.jpg",
+        image: "/Banner/banner2.jpg",
         title: "Complete Auto Care",
         description: "Quality Auto Repair Services for Your Vehicle",
     },
     {
         id: 3,
-        image: "/Banner/banner_3.jpg",
+        image: "/Banner/banner3.jpg",
         title: "Trusted Service",
         description: "Your Bike, Our Responsibility",
     },
