@@ -6,7 +6,7 @@ const options = [
     title: "BUY A CAR",
     description: "Find your perfect car",
     icon: Car,
-    href: "/vehicles/cars",
+    href: "/vehicles/bikes",
     button: "View Stock",
   },
   {
@@ -21,14 +21,14 @@ const options = [
     description: "Professional vehicle care",
     icon: Wrench,
     href: "/service",
-    button: "Book Now",
+    button: "Comming Soon",
   },
   {
     title: "CAR WASH",
     description: "Premium cleaning & detailing",
     icon: Droplets,
     href: "/car-wash",
-    button: "Book Wash",
+    button: "Cooming Soon",
   },
 ];
 

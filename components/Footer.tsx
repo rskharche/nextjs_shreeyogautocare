@@ -36,7 +36,7 @@ function Footer() {
                         <div className="flex flex-wrap gap-3">
 
                             <Link
-                                href="/vehicles"
+                                href="/vehicles/bikes"
                                 className="inline-flex items-center gap-2 rounded-full bg-amber-500 px-6 py-3 text-sm font-bold text-white transition hover:bg-amber-600"
                             >
                                 Explore Vehicles
@@ -44,7 +44,7 @@ function Footer() {
                             </Link>
 
                             <Link
-                                href="/service"
+                                href="/Contact"
                                 className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-bold text-white transition hover:border-amber-500 hover:text-amber-500"
                             >
                                 Book Service

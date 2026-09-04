@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import FeaturedVehicles from "@/components/Featuredvehicles";
 import Quickaction from "@/components/Quickaction";
+import FinanceInsurance from "@/components/FinanceInsurance";
 
 const BASE_PATH =
     process.env.NODE_ENV === "production"
@@ -125,6 +126,7 @@ function page() {
             </section>
             <Quickaction />
             <FeaturedVehicles />
+            <FinanceInsurance/>
         </>
     );
 }

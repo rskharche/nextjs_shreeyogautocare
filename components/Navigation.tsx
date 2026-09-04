@@ -31,13 +31,13 @@ function Navigation() {
                         <Link className="hover:text-amber-300" href="/components/Featuredvehicles">Buy</Link>
                     </li>
                     <li>
-                        <Link className="hover:text-amber-300" href="/sell">Sell</Link>
+                        <Link className="hover:text-amber-300" href="/Contact">Sell</Link>
                     </li>
                     <li>
-                        <Link className="hover:text-amber-300" href="/service">Service</Link>
+                        <Link className="hover:text-amber-300" href="/Contact">Service</Link>
                     </li>
                     <li>
-                        <Link className="hover:text-amber-300" href="/wash">Wash</Link>
+                        <Link className="hover:text-amber-300" href="/Contact">Wash</Link>
                     </li>
                     <li>
                         <Link className="hover:text-amber-300" href="/Contact">Contact Us</Link>
