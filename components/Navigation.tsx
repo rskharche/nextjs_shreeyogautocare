@@ -23,7 +23,7 @@ function Navigation() {
                 />
             </div>
             <nav>
-                <ul className="flex gap-4 justify-end caret-amber-300">
+                <ul className="flex text-sm md:text-base lg:text-lg gap-2 md:gap-2.5 lg:gap-4 justify-end caret-amber-300">
                    <li>
                         <Link className="hover:text-amber-300" href="/">Home</Link>
                     </li>
