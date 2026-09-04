@@ -6,6 +6,7 @@ import {
     Clock,
     ArrowUpRight,
 } from "lucide-react";
+import Image from "next/image";
 
 function Footer() {
     return (
@@ -212,7 +213,7 @@ function Footer() {
                                         </span> AutoCare
                                         <br />
                                         <span className="font-bold text-amber-500">Shop 1</span> :-  next to bharat petroleum, opposite to KGN DHABA, Ajivali, Vavoshi, Maharashtra 410203
-                                       <br />
+                                        <br />
                                         <span className="font-bold text-amber-500">Shop 2</span> :-  Shop No 1, Patil Nivas, near sharada magal karyalaya, Mahad, mahad, Khopoli, Maharashtra 410202
 
                                     </p>
@@ -240,7 +241,7 @@ function Footer() {
                                         href="tel:+910000000000"
                                         className="mt-1 block text-sm text-gray-400 transition hover:text-amber-500"
                                     >
-                                       +91 755 858 2704
+                                        +91 755 858 2704
                                     </a>
 
                                 </div>
@@ -307,43 +308,39 @@ function Footer() {
 
                 {/* ================= BOTTOM ================= */}
 
-                <div className="mt-14 border-t border-white/10 pt-7">
+              <div className="border-t border-white/10 py-5 mt-10">
+    <div className="flex flex-col items-center justify-between gap-3 sm:flex-row">
 
-                    <div className="flex flex-col gap-5 text-sm md:flex-row md:items-center md:justify-between">
+        {/* Copyright */}
+        <p className="text-xs text-gray-500">
+            © {new Date().getFullYear()} ShreeYog AutoCare. All rights reserved.
+        </p>
 
-                        <p className="text-gray-500">
-                            © {new Date().getFullYear()} ShreeYogAutoCare. All rights reserved.
-                        </p>
+        {/* Developer Credit */}
+        <div className="flex items-center gap-2">
+            <p className="text-xs text-gray-500">
+                Designed & Developed by
+            </p>
 
+            <Image
+                src={
+                    process.env.NODE_ENV === "production"
+                        ? "/nextjs_shreeyogautocare/RK_Logo.png"
+                        : "/RK_Logo.png"
+                }
+                alt="RSKharche"
+                width={50}
+                height={35}
+                className="h-8 w-auto object-contain"
+            />
 
-                        <div className="flex flex-wrap gap-6">
+            <span className="text-xs font-semibold text-amber-400">
+                RSKharche
+            </span>
+        </div>
 
-                            <Link
-                                href="/privacy-policy"
-                                className="text-gray-500 transition hover:text-white"
-                            >
-                                Privacy Policy
-                            </Link>
-
-                            <Link
-                                href="/terms"
-                                className="text-gray-500 transition hover:text-white"
-                            >
-                                Terms & Conditions
-                            </Link>
-
-                            <Link
-                                href="/contact"
-                                className="text-gray-500 transition hover:text-white"
-                            >
-                                Contact
-                            </Link>
-
-                        </div>
-
-                    </div>
-
-                </div>
+    </div>
+</div>
 
             </div>
 

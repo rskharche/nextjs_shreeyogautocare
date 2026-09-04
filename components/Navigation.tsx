@@ -9,7 +9,7 @@ const BASE_PATH =
 function Navigation() {
     return (
         <header className="bg-[#111111] text-white p-4 items-center grid grid-cols-2">
-            <div>
+            <div><Link href="/">
                 <Image
                     src={
                         process.env.NODE_ENV === "production"
@@ -21,7 +21,7 @@ function Navigation() {
                     height={40}
                     className="h-12 w-auto object-contain"
                 />
-            </div>
+            </Link></div>
             <nav>
                 <ul className="flex text-sm md:text-base lg:text-lg gap-2 md:gap-2.5 lg:gap-4 justify-end caret-amber-300">
                    <li>
